@@ -1,0 +1,17 @@
+{
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	"remoteUser": "node",
+	"updateRemoteUserUID": true,
+	"forwardPorts": [
+		5173
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+			]
+		}
+	}
+}
