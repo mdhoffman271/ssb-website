@@ -1,0 +1,49 @@
+header.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+.header .mobile nav {
+  flex-direction: column;
+}
+
+.header a {
+  text-align: center;
+  color: var(--color-text);
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.header a:hover,
+.header :global(a.active) {
+  color: var(--color-primary);
+}
+
+.header .mobile a {
+  font-size: 1.3rem;
+}
+
+.header .mobile {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: var(--color-bg);
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1.logo {
+  color: var(--color-primary);
+}

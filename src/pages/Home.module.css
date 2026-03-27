@@ -1,0 +1,25 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+a.schedule {
+  text-decoration: none;
+}
+
+div.schedule {
+  width: fit-content;
+  color: var(--color-bg);
+  padding: 1rem;
+  background-color: var(--color-primary);
+  border-radius: 1rem;
+  margin: 3rem;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+p.large {
+  font-size: 1.2em;
+}
