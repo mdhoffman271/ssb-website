@@ -17,7 +17,7 @@ function Contact() {
       <p>
         <a href='mailto:ssb@ssbcounselingservices.com'>
           <img className={styles.icon} src={email} alt='Email icon' />
-          ssb@ssbcounselingservices.com
+          ssb<wbr/>@ssbcounselingservices<wbr/>.com
         </a>
       </p>
       <p>

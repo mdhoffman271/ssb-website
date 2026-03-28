@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import logo from '../assets/SSB LOGO.jpg';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import Hamburger from './Hamburger';
 import styles from './Header.module.css';
@@ -12,7 +13,7 @@ function Header() {
 function DesktopHeader() {
   return (
     <header className={`${styles.header} column wide`}>
-      <h1 className={styles.logo}>SSB</h1>
+      <img src={logo} className={styles.logo}/>
       <Menu />
     </header>
   );
@@ -28,12 +29,11 @@ function MobileHeader() {
 
   return (
     <header className={`${styles.header} column wide`}>
-      <h1 className={styles.logo}>SSB</h1>
-
+      <img src={logo} className={`${styles.logo} ${styles.mobile}`}/>
       <Hamburger isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} />
 
       {isMenuOpen && (
-        <div className={styles.mobile}>
+        <div className={styles.popup}>
           <Menu />
         </div>
       )}

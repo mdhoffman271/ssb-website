@@ -13,7 +13,7 @@ header.header {
   gap: 1rem;
 }
 
-.header .mobile nav {
+.header .popup nav {
   flex-direction: column;
 }
 
@@ -31,11 +31,11 @@ header.header {
   color: var(--color-primary);
 }
 
-.header .mobile a {
+.header .popup a {
   font-size: 1.3rem;
 }
 
-.header .mobile {
+.header .popup {
   position: absolute;
   left: 0;
   top: 100%;
@@ -44,6 +44,12 @@ header.header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1.logo {
-  color: var(--color-primary);
+img.logo {
+  margin: 1rem;
+  height: 8rem;
+  width: auto;
+}
+
+img.logo.mobile {
+  height: 5rem;
 }
