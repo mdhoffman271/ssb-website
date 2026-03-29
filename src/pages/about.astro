@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import saraImage from "../assets/sara.jpg";
+---
+
+<Layout>
+	<div class="content">
+		<Image src={saraImage} alt="Sara Buchanan" class="inline headshot" />
+		<h1>Sara Buchanan</h1>
+		<h2>Therapist</h2>
+		<p>
+			Sara Buchanan is a Licensed Mental Health Counselor in the State of
+			Florida, and the owner of SSB Counseling Services, based in
+			Jacksonville, Florida. Sara earned her Master of Science degree in
+			2023 at the University of North Florida in the Clinical Mental
+			Health Counseling program. Sara received Dialectical Behavioral
+			Therapy informed training during her practicum and internship.
+		</p>
+		<p>
+			Sara first obtained experience working in an outpatient private
+			practice, where she treated individuals with a variety of mental
+			health diagnoses, including depression, anxiety, and substance use
+			disorders. Since graduating, Sara has specialized in treating eating
+			disorders. She provides evidence-based care using the Health At
+			Every Size (HAES) model for those struggling with an eating
+			disorder, disordered eating, or body image concerns. Sara offers a
+			blend of therapeutic styles, including Internal Family Systems
+			(IFS), DBT, CBT, and trauma-informed practices.
+		</p>
+		<p>
+			In addition, Sara has experience working with ages 12+ struggling
+			with anxiety, depression, life transitions, and more. She is also
+			passionate about working with LGBTQIA+ individuals. Sara has
+			experience working in various levels of care, including residential,
+			partial hospitalization (PHP), and intensive outpatient (IOP)
+			programs.
+		</p>
+		<p>
+			In her spare time, Sara enjoys spending time with her cats, playing
+			Dungeons & Dragons, and playing video games (particularly Pokemon
+			and Animal Crossing)!
+		</p>
+	</div>
+</Layout>
+
+<style>
+	.content {
+		width: 100%;
+		max-width: min(var(--medium-page-width), 100%);
+		margin: 0 auto;
+	}
+
+	.headshot {
+		border-radius: 50%;
+	}
+</style>
