@@ -1,0 +1,95 @@
+---
+import ActiveLink from "../components/ActiveLink.astro";
+import Hamburger from "../components/Hamburger.astro";
+import Cross from "../components/Cross.astro";
+import { Image } from "astro:assets";
+import logoImage from "../assets/ssb-logo.png";
+import NavMenu from "./NavMenu.astro";
+
+const { ...props } = Astro.props;
+---
+
+<header {...props}>
+    <Image src={logoImage} alt="SSB Logo" class="logo" />
+    <div>
+        <NavMenu class="show-desktop" />
+        <Hamburger class="show-mobile" id="mobile-hamburger" />
+    </div>
+
+    <div id="responsive-header-background" class="show-mobile"></div>
+    <aside id="responsive-header-mobile" class="show-mobile">
+        <Cross id="mobile-cross" />
+        <NavMenu class="mobile-nav-menu" />
+    </aside>
+</header>
+
+<script>
+    function toggle() {
+        document.body.classList.toggle("responsive-header-open");
+    }
+
+    document
+        .getElementById("mobile-hamburger")
+        ?.addEventListener("click", toggle);
+
+    document.getElementById("mobile-cross")?.addEventListener("click", toggle);
+</script>
+
+<style>
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    img.logo {
+        height: 7rem;
+        width: auto;
+    }
+
+    #responsive-header-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    body.responsive-header-open #responsive-header-background {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    #responsive-header-mobile {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        min-width: min(100%, 25rem);
+        height: 100%;
+        background-color: var(--color-bg);
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+    }
+
+    body.responsive-header-open #responsive-header-mobile {
+        transform: translateX(0);
+    }
+
+    #mobile-cross {
+        margin-top: 3rem;
+        margin-left: auto;
+    }
+
+    .mobile-nav-menu {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.4rem;
+    }
+</style>

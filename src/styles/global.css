@@ -11,11 +11,10 @@
     --medium-page-width: 70rem;
 }
 
-html,
 body {
     margin: 0;
-    width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    position: relative;
 }
 
 p,
@@ -79,5 +78,20 @@ img.inline {
         max-width: 384px;
         margin: 2rem;
         float: left;
+    }
+}
+
+
+.show-desktop {
+    display: none !important;
+}
+
+@media (min-width: 768px) {
+    .show-desktop {
+        display: initial !important;
+    }
+
+    .show-mobile {
+        display: none !important;
     }
 }

@@ -1,0 +1,14 @@
+---
+const { href = "", class: className = "", ...props } = Astro.props;
+
+// Normalize paths to avoid trailing-slash mismatches
+const current = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const target = href.replace(/\/+$/, "") || "/";
+
+const isActive = current === target;
+const classes = `${className} ${isActive ? "active" : ""}`.trim();
+---
+
+<a href={href} class={classes} {...props}>
+    <slot />
+</a>
